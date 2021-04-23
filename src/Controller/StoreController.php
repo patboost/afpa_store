@@ -40,8 +40,9 @@ class StoreController extends AbstractController
 
     /**
      * @Route ("/store/edit/{id}", name="edit_prod")
+     * @Route("/store/new", name="new_prod")
      */
-    public function editProduct(Product $product){
+    public function editProduct(Product $product=null){
         return $this->render('store/edit_prod.html.twig');
     }
 }
