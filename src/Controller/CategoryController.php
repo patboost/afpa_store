@@ -23,6 +23,16 @@ class CategoryController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/category/{id}", name="detail_cat")
+     */
+    public function detailCategory(Category $category)
+    {
+        return $this->render('category/show_products.html.twig', [
+            'cat' => $category
+        ]);
+    }
+
 /**
      * @Route("/category/delete/{id}", name="delete_cat")
      */

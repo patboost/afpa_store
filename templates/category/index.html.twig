@@ -10,7 +10,7 @@
             <tr class="table-info">
                 <th class="text-center">#</th>
                 <th class="text-center">Nom catégorie</th>
-                <th colspan="2" class="text-center"><a href="{{ path('new_cat') }}" class="btn btn-success fa fa-plus-square"></a></th>
+                <th colspan="3" class="text-center"><a href="{{ path('new_cat') }}" class="btn btn-success fa fa-plus-square"></a></th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +23,7 @@
                     {% endif %}">
                     <td class="text-center">{{ cat.id }}</td>
                     <td class="text-center">{{ cat.name }}</td>
+                     <td><a href="{{ path('detail_cat', {'id': cat.id}) }}" class="fa fa-binoculars"></a></td>
                     <td><a href="{{ path('edit_cat', {'id': cat.id}) }}" class="fa fa-edit"></a></td>
                     <td><a href="{{ path('delete_cat', {'id': cat.id}) }}" class="fa fa-trash"></a></td>
                 </tr>
