@@ -24,16 +24,6 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/category/{id}", name="detail_cat")
-     */
-    public function detailCategory(Category $category)
-    {
-        return $this->render('category/show_products.html.twig', [
-            'cat' => $category
-        ]);
-    }
-
-/**
      * @Route("/category/delete/{id}", name="delete_cat")
      */
     public function deleteCategory(Category $cat, EntityManagerInterface $manager) {
@@ -66,6 +56,18 @@ class CategoryController extends AbstractController
         return $this->render('category/edit_cat.html.twig', [
             'form' => $form->createView(),
             'mode' => $category->getId() != null, 
+        ]);
+    }
+
+     // Pour ne pas être en conflit avec 
+    //la route "/category/{id}"
+    /**
+     * @Route("/category/{id}", name="detail_cat")
+     */
+    public function detailCategory(Category $category)
+    {
+        return $this->render('category/show_products.html.twig', [
+            'cat' => $category
         ]);
     }
 }
